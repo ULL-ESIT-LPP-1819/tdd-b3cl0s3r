@@ -36,6 +36,26 @@ RSpec.describe Nutricional do
     expect(@tag.sal).to eq(0.02)
   end
 
+  it "Monoinsaturadas" do
+    @tag.monoinsat = 1
+    expect(@tag.monoinsat).to eq(1)
+  end
+
+  it "Polialcoles" do
+    @tag.polialcol = 1
+    expect(@tag.polialcol).to eq(1)
+  end
+
+  it "Almidon" do
+    @tag.almidon = 1
+    expect(@tag.almidon).to eq(1)
+  end
+
+  it "Fibra" do
+    @tag.almidon = 1
+    expect(@tag.almidon).to eq(1)
+  end
+
   it "Calculo kJ/g" do
     expect(@tag.calcularkj).to eq(36.2)
   end
