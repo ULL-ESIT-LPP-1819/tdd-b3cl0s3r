@@ -6,12 +6,12 @@ require "nutricional/version"
 Gem::Specification.new do |spec|
   spec.name          = "nutricional"
   spec.version       = Nutricional::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Kevin Eliezer García Peña"]
+  spec.email         = ["alu0101045788@ull.edu.es"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Practica 6 LPP}
+  spec.description   = %q{Nutricional}
+  spec.homepage      = "https://github.com/ULL-ESIT-LPP-1819/tdd-b3cl0s3r"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
