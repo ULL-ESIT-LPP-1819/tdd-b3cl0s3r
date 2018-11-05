@@ -37,10 +37,10 @@ RSpec.describe Nutricional do
   end
 
   it "Calculo kJ/g" do
-    expect(@tag.calcularkj)
+    expect(@tag.calcularkj).to eq(36.2)
   end
 
   it "Calculo kcal/g" do
-    expect(@tag.calcularkcal)
+    expect(@tag.calcularkcal).to eq(8.52)
   end
 end
