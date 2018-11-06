@@ -64,7 +64,7 @@ RSpec.describe Nutricional do
     expect(@tag.calcularkcal).to eq(8.52)
   end
 
-  it "Prueba calculo IR de azucares" do
+  it "Calculo IR de los azucares" do
     expect(@tag.calcularir(@tag.azucares)).to eq(15)
   end
 
