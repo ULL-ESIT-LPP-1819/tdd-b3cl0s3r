@@ -64,11 +64,11 @@ RSpec.describe Nutricional do
     expect(@tag.calcularkcal).to eq(8.52)
   end
 
-  it "Calculo IR" do
-    expect(@tag.calcularir)
+  it "Prueba calculo IR de azucares" do
+    expect(@tag.calcularir(@tag.azucares)).to eq(15)
   end
 
   it "Mostrar etiqueta" do
-    puts @tag.to_s
+    expect(@tag.to_s).to eq(nil)
   end
 end
