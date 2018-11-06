@@ -26,4 +26,36 @@ class Tag
   def calcularkcal
     9*@cgrasas+9*@monoinsat+9*@poliinsat+4*@hidratos+2.4*@polialcol+4*@almidon+2*@fibra+4*@proteinas+6*@sal
   end
+
+  def calcularir(valor)
+    suma = @venergetico+@cgrasas+@cgsaturadas+@hidratos+@azucares+@proteinas+@sal+@monoinsat+@poliinsat+@polialcol+@almidon+@fibra
+    (valor*100)/suma.round(0)
+  end
+
+  def to_s
+    puts "\nNombre etiqueta: #{@nombre}\t\t\t IR"
+    puts  "Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal"
+    puts  "Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%"
+    puts  "Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%"
+    puts  "Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%"
+    puts  "Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%"
+    puts  "Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%"
+    puts  "Azúcares: #{@azucares} g\t\t\t\t\t #{self.calcularir(@azucares)}%"
+    puts  "Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%"
+    puts  "Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%"
+    puts  "Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%"
+    puts  "Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
+  end
+
+
+  def irref
+    puts  "Valor energético: 8.400kJ / 2000 kcal/g"
+    puts  "Grasas total: 70 g"
+    puts  "Acidos grasos saturados: 20 g"
+    puts  "Hidratos de carbono: 260 g"
+    puts  "Azúcares: 90 g"
+    puts  "Proteinas: 50 g"
+    puts  "Sal: 6 g"
+  end
+
 end
