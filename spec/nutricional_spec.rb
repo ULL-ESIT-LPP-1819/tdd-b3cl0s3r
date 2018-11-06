@@ -71,4 +71,8 @@ RSpec.describe Nutricional do
   it "Mostrar etiqueta" do
     expect(@tag.to_s).to eq(nil)
   end
+
+  it "Mostrar IR de referencia" do
+    expect(@tag.irref).to eq(nil)
+  end
 end
