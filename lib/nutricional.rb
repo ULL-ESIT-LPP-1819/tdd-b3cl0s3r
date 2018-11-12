@@ -33,18 +33,19 @@ class Tag
   end
 
   def to_s
-    puts "\nNombre etiqueta: #{@nombre}\t\t\t IR"
-    puts  "Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal"
-    puts  "Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%"
-    puts  "Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%"
-    puts  "Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%"
-    puts  "Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%"
-    puts  "Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%"
-    puts  "Azúcares: #{@azucares} g\t\t\t\t\t #{self.calcularir(@azucares)}%"
-    puts  "Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%"
-    puts  "Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%"
-    puts  "Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%"
-    puts  "Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
+    ## CONCATENAR Y DEVOLVER CADENA...
+    a="\nNombre etiqueta: #{@nombre}\t\t\t IR"
+    a+="Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal"
+    a+="Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%"
+    a+="Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%"
+    a+="Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%"
+    a+="Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%"
+    a+="Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%"
+    a+="Azúcares: #{@azucares} g\t\t\t\t\t #{self.calcularir(@azucares)}%"
+    a+="Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%"
+    a+="Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%"
+    a+="Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%"
+    a+="Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
   end
 
 
