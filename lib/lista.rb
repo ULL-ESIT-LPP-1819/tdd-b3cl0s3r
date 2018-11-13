@@ -1,25 +1,53 @@
-require 'nutricional'
+Node = Struct.new(:value, :next, :prev)
 
 class Lista
   attr_accessor :head, :tail
 
   def initialize()
+     @head = nil
+     @tail = nil
   end
 
-  def insert(nodo)
-    # Cojo el tail, set next el nodo, nuevo nodo = tail
+  def insert(etiqueta)
+     nodo = Node.new(etiqueta, nil, nil)
+     if self.empty
+       @head=nodo
+       @tail=nodo
+     else
+       nodo.prev = @tail
+       nodo.next = nil
+       @tail.next = nodo
+       tail = nodo
+     end
   end
 
   def pop
-    # Coges el tail, accedes a la anterior etiqueta, asigno esa etiqueta al tail
+    if self.empty
+      return nil
+    else
+      @tail = @tail.prev
+      return @tail
+    end
   end
 
   def shift
-    # Coges el head, accedes a la siguiente etiqueta, asigno esa etiqueta al head
+    if self.empty
+      return nil
+    else
+      @head = @head.next
+      return @head
+    end
   end
 
   def recorrer
-    # recorrer
+    node = @head
+    while !(node.nil?)
+      node.value.to_s
+      node=node.next
+    end
   end
-  
+
+  def empty
+    @head.nil?
+  end
 end
