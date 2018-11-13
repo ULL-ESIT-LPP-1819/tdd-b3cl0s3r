@@ -34,17 +34,17 @@ class Tag
 
   def to_s
     ## CONCATENAR Y DEVOLVER CADENA...
-    a="\nNombre etiqueta: #{@nombre}\t\t\t IR"
-    a+="Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal"
-    a+="Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%"
-    a+="Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%"
-    a+="Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%"
-    a+="Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%"
-    a+="Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%"
-    a+="Azúcares: #{@azucares} g\t\t\t\t\t #{self.calcularir(@azucares)}%"
-    a+="Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%"
-    a+="Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%"
-    a+="Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%"
+    a="\nNombre etiqueta: #{@nombre}\t\t\t IR\n"
+    a+="Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal\n"
+    a+="Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%\n"
+    a+="Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%\n"
+    a+="Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%\n"
+    a+="Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%\n"
+    a+="Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%\n"
+    a+="Azúcares: #{@azucares} g\t\t\t\t\t #{self.calcularir(@azucares)}%\n"
+    a+="Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%\n"
+    a+="Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%\n"
+    a+="Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%\n"
     a+="Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
   end
 
