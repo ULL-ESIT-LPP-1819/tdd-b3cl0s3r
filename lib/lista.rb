@@ -56,12 +56,14 @@ class Lista
     end
   end
 
-  def recorrer
+  def to_s
     node = @head
+    a = ""
     while !(node.nil?)
-      puts node.value.to_s
+      a += node.value.to_s
       node=node.next
     end
+    return a
   end
 
   def tamañolista

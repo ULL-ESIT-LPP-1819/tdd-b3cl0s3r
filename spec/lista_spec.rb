@@ -29,13 +29,13 @@ RSpec.describe Nutricional do
     expect(@lista.empty).to be true
   end
 
-  it "Recorrer correcto" do
+  it "To_s correcto" do
     expect(@lista.insert(@etiqueta1)).equal?(Node)
     expect(@lista.insert(@etiqueta2)).equal?(Node)
     expect(@lista.insert(@etiqueta3)).equal?(Node)
     expect(@lista.insert(@etiqueta4)).equal?(Node)
     expect(@lista.insert(@etiqueta5)).equal?(Node)
-    @lista.recorrer
+    expect(@lista.to_s).equal?(String)
     expect(@lista.tamañolista).to eq(5)
     expect(@lista.pop).equal?(Node)
     expect(@lista.tamañolista).to eq(4)
