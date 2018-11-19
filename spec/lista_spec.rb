@@ -49,7 +49,7 @@ RSpec.describe Nutricional do
     expect(@lista.insert(@etiqueta3)).equal?(Node)
     expect(@lista.insert(@etiqueta4)).equal?(Node)
     expect(@lista.insert(@etiqueta5)).equal?(Node)
-    array = @lista.clasificar
+    array = @lista.clasificar_sales
     ## Array 0 contiene valores menores que 6
     expect(array[0].length).to eq(3)
     ## Array 1 contiene valores mayores que 6

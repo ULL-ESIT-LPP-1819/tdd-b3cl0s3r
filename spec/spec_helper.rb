@@ -1,6 +1,9 @@
 require "bundler/setup"
 require "nutricional"
 require "lista"
+require "persona"
+require "datos"
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

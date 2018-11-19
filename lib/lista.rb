@@ -80,7 +80,7 @@ class Lista
     @head.nil?
   end
 
-  def clasificar
+  def clasificar_sales
 
     devolver = []
     l1 = []
@@ -92,6 +92,25 @@ class Lista
         l1.append(node.value.sal)
       else
         l2.append(node.value.sal)
+      end
+      node=node.next
+    end
+
+    devolver.append(l1, l2)
+  end
+
+  def clasificar_imc
+
+    devolver = []
+    l1 = []
+    l2 = []
+    node = @head
+
+    while !(node.nil?)
+      if node.value.imc < 30
+        l1.append(node.value.imc)
+      else
+        l2.append(node.value.imc)
       end
       node=node.next
     end
