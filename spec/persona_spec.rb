@@ -1,5 +1,6 @@
 RSpec.describe Nutricional do
 
+## CAMBIAR ARRAY DE CINTURAS
 
   before :each do
     @person1 = Paciente.new("Marta", Datos.new(180,90,17,"hombre", 105, 130))
@@ -8,6 +9,7 @@ RSpec.describe Nutricional do
     @person4 = Paciente.new("Jorge", Datos.new(156, 200, 84, "mujer", 110, 100))
     @person0 = Paciente.new("Diego", Datos.new(176, 255, 23, "mujer", 150, 120))
     @person6 = Persona.new("Pepe")
+    @lista = Lista.new()
   end
 
   it "Comprobación clase de un objeto" do
@@ -16,18 +18,43 @@ RSpec.describe Nutricional do
     expect(@person1).not_to be_a_kind_of(Tag)
   end
 
+# private_method_defined?
+# method_defined?
+# ancestors_include?
+# ancestors_include?().to eq(true)
+# is_a? != instance_of
 
-#  it "Comprobación tipo de un objeto" do
-
-#  end
-
-
-#  it "Comprobación pertenece a una jerarquía" do
-
-#  end
+  it "Comprobacion tipo de clase" do
+    expect(@person1).is_a?(Persona)
+    expect(@person1).to be_a_kind_of(Paciente)
+    expect(@person1).not_to be_a_kind_of(Tag)
+  end
 
 
-#  it "Pruebas para clasificar según masa corporal" do
+  it "Comprobacion funciones" do
+      expect(Persona.private_method_defined? (:initialize)).to eq(true)
+      expect(Paciente.private_method_defined? (:initialize)).to eq(true)
+      expect(Paciente.method_defined? (:devolver_datos)).to eq(true)
+      expect(Paciente.method_defined? (:to_s)).to eq(true)
+  end
 
-#  end
+  it "Comprobación jerarquia" do
+    # comprobar object y basic object
+    expect(@person1.class).to eq(Paciente)
+    expect(@person1.class.superclass).to eq(Persona)
+    expect(@person1.class.ancestors.include? (Object)).to eq (true)
+    expect(@person1.class.ancestors.include? (BasicObject)).to eq (true)
+  end
+
+  it "Comprobar clasificación" do
+    expect(@lista.insert(@person0)).equal?(Node)
+    expect(@lista.insert(@person1)).equal?(Node)
+    expect(@lista.insert(@person2)).equal?(Node)
+    expect(@lista.insert(@person3)).equal?(Node)
+    expect(@lista.insert(@person4)).equal?(Node)
+    array = @lista.clasificar_imc
+    expect(array[0].length).to eq(2)
+    expect(array[1].length).to eq(3)
+  end
+
 end

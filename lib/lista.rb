@@ -2,7 +2,7 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista
   attr_accessor :head, :tail
-
+# galleta
   def initialize()
      @head = nil
      @tail = nil
@@ -107,10 +107,10 @@ class Lista
     node = @head
 
     while !(node.nil?)
-      if node.value.imc < 30
-        l1.append(node.value.imc)
+      if node.value.datos.imc < 30
+        l1.append(node.value.datos.imc)
       else
-        l2.append(node.value.imc)
+        l2.append(node.value.datos.imc)
       end
       node=node.next
     end

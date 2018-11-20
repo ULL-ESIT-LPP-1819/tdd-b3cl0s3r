@@ -5,6 +5,10 @@ class Persona
     @name=nombre
   end
 
+  def to_s
+    "#{name}"
+  end
+
 end
 
 
@@ -18,6 +22,11 @@ class Paciente < Persona
     @datos=datos
   end
 
-  def <=>
+  def devolver_datos
+    return @datos
+  end
+
+  def to_s
+
   end
 end
