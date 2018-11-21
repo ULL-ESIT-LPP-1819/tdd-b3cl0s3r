@@ -36,6 +36,7 @@ RSpec.describe Nutricional do
       expect(Paciente.private_method_defined? (:initialize)).to eq(true)
       expect(Paciente.method_defined? (:devolver_datos)).to eq(true)
       expect(Paciente.method_defined? (:to_s)).to eq(true)
+      expect(Paciente.respond_to? (:una_funcion_random)).to eq(false)
   end
 
   it "Comprobación jerarquia" do
@@ -44,6 +45,7 @@ RSpec.describe Nutricional do
     expect(@person1.class.superclass).to eq(Persona)
     expect(@person1.class.ancestors.include? (Object)).to eq (true)
     expect(@person1.class.ancestors.include? (BasicObject)).to eq (true)
+    puts Paciente.to_s
   end
 
   it "Comprobar clasificación" do

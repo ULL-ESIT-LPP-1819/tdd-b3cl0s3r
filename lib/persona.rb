@@ -27,6 +27,7 @@ class Paciente < Persona
   end
 
   def to_s
-
+    a+="#{name}"
+    a+=name.to_s
   end
 end
