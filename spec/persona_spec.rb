@@ -1,7 +1,5 @@
 RSpec.describe Nutricional do
 
-## CAMBIAR ARRAY DE CINTURAS
-
   before :each do
     @person1 = Paciente.new("Marta", Datos.new(180,90,17,"hombre", 105, 130))
     @person2 = Paciente.new("Fer", Datos.new(156, 50, 9, "mujer", 60, 80))
@@ -45,7 +43,6 @@ RSpec.describe Nutricional do
     expect(@person1.class.superclass).to eq(Persona)
     expect(@person1.class.ancestors.include? (Object)).to eq (true)
     expect(@person1.class.ancestors.include? (BasicObject)).to eq (true)
-    puts Paciente.to_s
   end
 
   it "Comprobar clasificación" do
