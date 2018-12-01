@@ -36,6 +36,7 @@ RSpec.describe Nutricional do
       expect(Paciente.method_defined? (:to_s)).to eq(true)
       expect(Persona.method_defined? (:to_s)).to eq(true)
       expect(Paciente.respond_to? (:una_funcion_random)).to eq(false)
+      expect(@person1).to respond_to("to_s")
   end
 
   it "Comprobación jerarquia" do

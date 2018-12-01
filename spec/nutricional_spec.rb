@@ -75,4 +75,24 @@ RSpec.describe Nutricional do
   it "Mostrar IR de referencia" do
     expect(@tag.irref).to eq(nil)
   end
+
+  it "Pruebas comparable etiqueta <" do
+    @p1 < @p2
+  end
+
+  it "Pruebas comparable etiqueta <=" do
+    @p1 <= @p2
+  end
+
+  it "Pruebas comparable etiqueta ==" do
+    @p1 == @p2
+  end
+
+  it "Pruebas comparable etiqueta >" do
+    @p1 > @p2
+  end
+
+  it "Pruebas comparable etiqueta >=" do
+    @p1 >= @p2
+  end
 end
