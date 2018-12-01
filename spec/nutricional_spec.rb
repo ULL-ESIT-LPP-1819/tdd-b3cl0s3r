@@ -2,6 +2,7 @@ RSpec.describe Nutricional do
 
   before :each do
     @tag = Tag.new("Freeway", 10, 0, 0, 2.1, 2.1, 0, 0.02)
+    @tag2 = Tag.new("Hamburguesa", 500, 63, 0, 2.1, 2.1, 0, 13)
   end
 
   it "Nombre etiqueta correcto" do
@@ -77,22 +78,23 @@ RSpec.describe Nutricional do
   end
 
   it "Pruebas comparable etiqueta <" do
-    @p1 < @p2
+    expect(@tag < @tag2).to be true
   end
 
   it "Pruebas comparable etiqueta <=" do
-    @p1 <= @p2
+    expect(@tag <= @tag2).to be true
   end
 
   it "Pruebas comparable etiqueta ==" do
-    @p1 == @p2
+    expect(@tag == @tag2).to be false
   end
 
   it "Pruebas comparable etiqueta >" do
-    @p1 > @p2
+    expect(@tag > @tag2).to be false
   end
 
   it "Pruebas comparable etiqueta >=" do
-    @p1 >= @p2
+    expect(@tag >= @tag2).to be false
   end
+
 end

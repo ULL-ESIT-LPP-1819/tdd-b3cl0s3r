@@ -1,7 +1,13 @@
 require "nutricional/version"
 
 class Tag
+
+  include Comparable
   attr_accessor :nombre, :venergetico, :cgrasas, :cgsaturadas, :hidratos, :azucares, :proteinas, :sal, :monoinsat, :poliinsat, :polialcol, :almidon, :fibra
+
+  def <=> (anOther)
+    nombre <=> anOther.nombre
+  end
 
   def initialize(v1, v2, v3, v4, v5, v6, v7, v8)
     @nombre = v1
