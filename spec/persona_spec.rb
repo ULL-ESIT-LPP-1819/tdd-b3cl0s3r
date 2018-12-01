@@ -58,4 +58,29 @@ RSpec.describe Nutricional do
     expect(array[1].length).to eq(3)
   end
 
+  it "Pruebas comparable persona <" do
+    expect(@person < @person2).to be true
+  end
+
+  it "Pruebas comparable persona <=" do
+    expect(@person <= @person2).to be true
+  end
+
+  it "Pruebas comparable persona ==" do
+    expect(@person == @person2).to be false
+  end
+
+  it "Pruebas comparable persona >" do
+    expect(@person > @person2).to be false
+  end
+
+  it "Pruebas comparable persona >=" do
+    expect(@person >= @person2).to be false
+  end
+
+  it "Pruebas comparable between" do
+    expect(@person3.between?(@person, @person2)).to be false
+    expect(@person4.between?(@person, @person2)).to be true
+  end
+
 end
