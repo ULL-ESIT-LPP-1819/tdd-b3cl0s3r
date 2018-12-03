@@ -3,8 +3,8 @@ RSpec.describe Nutricional do
   before :each do
     @person1 = Paciente.new("Marta", Datos.new(180,90,17,"hombre", 105, 130))
     @person2 = Paciente.new("Fer", Datos.new(156, 50, 9, "mujer", 60, 80))
-    @person3 = Paciente.new("Sonia", Datos.new(179, 112, 57, "hombre", 200, 60))
-    @person4 = Paciente.new("Jorge", Datos.new(156, 200, 84, "mujer", 110, 100))
+    @person3 = Paciente.new("Oto", Datos.new(179, 112, 57, "hombre", 200, 60))
+    @person4 = Paciente.new("Eco", Datos.new(156, 200, 84, "mujer", 110, 100))
     @person0 = Paciente.new("Diego", Datos.new(176, 255, 23, "mujer", 150, 120))
     @person6 = Persona.new("Pepe")
     @lista = Lista.new()
@@ -59,28 +59,28 @@ RSpec.describe Nutricional do
   end
 
   it "Pruebas comparable persona <" do
-    expect(@person < @person2).to be true
+    expect(@person0 < @person2).to be true
   end
 
   it "Pruebas comparable persona <=" do
-    expect(@person <= @person2).to be true
+    expect(@person0 <= @person2).to be true
   end
 
   it "Pruebas comparable persona ==" do
-    expect(@person == @person2).to be false
+    expect(@person0 == @person2).to be false
   end
 
   it "Pruebas comparable persona >" do
-    expect(@person > @person2).to be false
+    expect(@person0 > @person2).to be false
   end
 
   it "Pruebas comparable persona >=" do
-    expect(@person >= @person2).to be false
+    expect(@person0 >= @person2).to be false
   end
 
   it "Pruebas comparable between" do
-    expect(@person3.between?(@person, @person2)).to be false
-    expect(@person4.between?(@person, @person2)).to be true
+    expect(@person3.between?(@person0, @person2)).to be false
+    expect(@person4.between?(@person0, @person2)).to be true
   end
 
 end

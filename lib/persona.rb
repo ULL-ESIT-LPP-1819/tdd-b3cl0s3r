@@ -1,9 +1,15 @@
 class Persona
   attr_accessor :name
+  include Comparable
 
   def initialize(nombre)
     @name=nombre
   end
+
+  def <=>(anOther)
+    self.name <=> anOther.name
+  end
+
 
   def to_s
     "#{name}"
