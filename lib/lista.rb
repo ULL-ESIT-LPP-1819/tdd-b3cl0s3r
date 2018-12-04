@@ -2,7 +2,8 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista
   attr_accessor :head, :tail
-# galleta
+  include Enumerable
+
   def initialize()
      @head = nil
      @tail = nil
@@ -117,4 +118,9 @@ class Lista
 
     devolver.append(l1, l2)
   end
+
+  def each
+    yield @head.value
+  end
+
 end
