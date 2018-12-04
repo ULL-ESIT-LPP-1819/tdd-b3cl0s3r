@@ -2,7 +2,7 @@ Node = Struct.new(:value, :next, :prev)
 
 class Lista
   attr_accessor :head, :tail
-  include Enumerable
+  include Comparable,Enumerable
 
   def initialize()
      @head = nil
@@ -27,7 +27,6 @@ class Lista
   end
 
   def pop
-
     if @head == nil
       return nil
     elsif @tail == @head
@@ -123,4 +122,27 @@ class Lista
     yield @head.value
   end
 
+
+  def clasf_hidratos
+    lista=[]
+
+    current_node=@head
+    while(!current_node.nil?)
+      lista.append(current_node.value.hidratos)
+      current_node=current_node.next
+    end
+    return lista
+  end
+
+
+  def clasf_peso
+    lista=[]
+    current_node=@head
+
+    while(!current_node.nil?)
+      lista.append(current_node.value.imc.round(1))
+      current_node=current_node.next
+    end
+    return lista
+  end
 end
