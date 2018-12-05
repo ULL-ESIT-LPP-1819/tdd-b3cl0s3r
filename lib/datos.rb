@@ -1,5 +1,7 @@
 class Datos
+  
   attr_reader :altura, :peso, :edad, :sexo, :circin, :circad
+
 
 
   def initialize(altura, peso, edad, sexo, circin, circad)
@@ -8,12 +10,9 @@ class Datos
     @circin, @circad = Float(circin), Float(circad)
   end
 
-
-
   def imc
     (peso/(altura**2))*10**4
   end
-
 
 
   def imcoms
@@ -35,7 +34,7 @@ class Datos
   end
 
 
-
+  #
   def grasa
     if @sexo == "mujer"
       1.2 * self.imc + 0.23*@edad - 10.8 - 5.4
