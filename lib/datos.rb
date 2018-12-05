@@ -1,8 +1,9 @@
 class Datos
-  
+
   attr_reader :altura, :peso, :edad, :sexo, :circin, :circad
 
 
+# Constructor de datos
 
   def initialize(altura, peso, edad, sexo, circin, circad)
     @altura, @peso = Float(altura), Float(peso)
@@ -10,10 +11,14 @@ class Datos
     @circin, @circad = Float(circin), Float(circad)
   end
 
+# Calcular imc
+
   def imc
     (peso/(altura**2))*10**4
   end
 
+
+# Compara el imc y dice su valoracion
 
   def imcoms
     x=self.imc.round(1)
@@ -33,8 +38,8 @@ class Datos
     end
   end
 
+# Calcula grasa
 
-  #
   def grasa
     if @sexo == "mujer"
       1.2 * self.imc + 0.23*@edad - 10.8 - 5.4
@@ -43,11 +48,14 @@ class Datos
     end
   end
 
+# Calcula rcc
+
   def rcc
     x=circin/circad
   end
 
 
+# Calcula el riesgo segun el rcc
 
   def rcc_risk
     x=self.rcc.round(5)

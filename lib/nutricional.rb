@@ -5,9 +5,13 @@ class Tag
   include Comparable
   attr_accessor :nombre, :venergetico, :cgrasas, :cgsaturadas, :hidratos, :azucares, :proteinas, :sal, :monoinsat, :poliinsat, :polialcol, :almidon, :fibra
 
+# Comparable
+
   def <=> (anOther)
     nombre <=> anOther.nombre
   end
+
+# Constructor
 
   def initialize(v1, v2, v3, v4, v5, v6, v7, v8)
     @nombre = v1
@@ -25,21 +29,25 @@ class Tag
     @fibra = 0
   end
 
+# Calcular kj
   def calcularkj
     37*@cgrasas+37*@monoinsat+37*@poliinsat+17*@hidratos+10*@polialcol+17*@almidon+8*@fibra+17*@proteinas+25*@sal
   end
 
+# Calcular Kcal
   def calcularkcal
     9*@cgrasas+9*@monoinsat+9*@poliinsat+4*@hidratos+2.4*@polialcol+4*@almidon+2*@fibra+4*@proteinas+6*@sal
   end
+
+# Calcular Ir
 
   def calcularir(valor)
     suma = @venergetico+@cgrasas+@cgsaturadas+@hidratos+@azucares+@proteinas+@sal+@monoinsat+@poliinsat+@polialcol+@almidon+@fibra
     (valor*100)/suma.round(0)
   end
 
+# Imprimir
   def to_s
-    ## CONCATENAR Y DEVOLVER CADENA...
     a="\nNombre etiqueta: #{@nombre}\t\t\t IR\n"
     a+="Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal\n"
     a+="Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%\n"
@@ -54,7 +62,7 @@ class Tag
     a+="Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
   end
 
-
+#  ir de referencia
   def irref
     puts  "Valor energético: 8.400kJ / 2000 kcal/g"
     puts  "Grasas total: 70 g"

@@ -4,10 +4,14 @@ class Lista
   attr_accessor :head, :tail
   include Comparable,Enumerable
 
+# Constructor
+
   def initialize()
      @head = nil
      @tail = nil
   end
+
+# Insertar en la lista
 
   def insert(etiqueta)
      nodo = Node.new(etiqueta, nil, nil)
@@ -26,6 +30,8 @@ class Lista
      end
   end
 
+# Sacar de la lista
+
   def pop
     if @head == nil
       return nil
@@ -41,6 +47,7 @@ class Lista
 
   end
 
+# Desplazar en la lista
 
   def shift
     if self.empty
@@ -56,6 +63,8 @@ class Lista
     end
   end
 
+# Imprimir lista
+
   def to_s
     node = @head
     a = ""
@@ -65,6 +74,8 @@ class Lista
     end
     return a
   end
+
+# Calcular tamaño lista
 
   def tamañolista
     size = 0
@@ -76,9 +87,13 @@ class Lista
     return size
   end
 
+# ¿esta la lista vacia?
+
   def empty
     @head.nil?
   end
+
+# Clasificar segun sales
 
   def clasificar_sales
 
@@ -99,6 +114,8 @@ class Lista
     devolver.append(l1, l2)
   end
 
+# Clasificar segun imc
+
   def clasificar_imc
 
     devolver = []
@@ -118,10 +135,13 @@ class Lista
     devolver.append(l1, l2)
   end
 
+# Recorrer each
+
   def each
     yield @head.value
   end
 
+# Clasificar por hidratos
 
   def clasf_hidratos
     lista=[]
@@ -134,6 +154,7 @@ class Lista
     return lista
   end
 
+# Clasificar por peso
 
   def clasf_peso
     lista=[]
