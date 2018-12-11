@@ -1,11 +1,11 @@
 RSpec.describe Nutricional do
 
   before :each do
-    @person1 = Paciente.new("Marta", Datos.new(180,90,17,"hombre", 105, 130))
-    @person2 = Paciente.new("Fer", Datos.new(156, 50, 9, "mujer", 60, 80))
-    @person3 = Paciente.new("Oto", Datos.new(179, 112, 57, "hombre", 200, 60))
-    @person4 = Paciente.new("Eco", Datos.new(156, 200, 84, "mujer", 110, 100))
-    @person0 = Paciente.new("Diego", Datos.new(176, 255, 23, "mujer", 150, 120))
+    @person1 = Paciente.new("Marta", Datos.new(180,90,17,"hombre", 105, 130, "a"))
+    @person2 = Paciente.new("Fer", Datos.new(156, 50, 9, "mujer", 60, 80, "a"))
+    @person3 = Paciente.new("Oto", Datos.new(179, 112, 57, "hombre", 200, 60, "a"))
+    @person4 = Paciente.new("Eco", Datos.new(156, 200, 84, "mujer", 110, 100, "a"))
+    @person0 = Paciente.new("Diego", Datos.new(176, 255, 23, "mujer", 150, 120, "a"))
     @person6 = Persona.new("Pepe")
     @lista = Lista.new()
   end
