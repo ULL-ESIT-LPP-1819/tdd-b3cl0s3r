@@ -1,6 +1,6 @@
 class Datos
 
-  attr_reader :altura, :peso, :edad, :sexo, :circin, :circad
+  attr_reader :altura, :peso, :edad, :sexo, :circin, :circad, :nivelact
 
 
 # Constructor de datos
@@ -9,6 +9,7 @@ class Datos
     @altura, @peso = Float(altura), Float(peso)
     @edad, @sexo = Float(edad), String(sexo)
     @circin, @circad = Float(circin), Float(circad)
+    @nivelact = String(nivelact)
   end
 
 # Calcular imc

@@ -138,7 +138,11 @@ class Lista
 # Recorrer each
 
   def each
-    yield @head.value
+    a = @head
+    while(!a.nil?)
+      yield it.value
+      it=it.next
+    end
   end
 
 # Clasificar por hidratos

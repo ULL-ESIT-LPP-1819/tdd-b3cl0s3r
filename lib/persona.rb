@@ -46,4 +46,6 @@ class Paciente < Persona
     a+="#{name}"
     a+=name.to_s
   end
+
+
 end
