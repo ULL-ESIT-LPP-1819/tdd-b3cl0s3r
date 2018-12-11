@@ -140,8 +140,8 @@ class Lista
   def each
     a = @head
     while(!a.nil?)
-      yield it.value
-      it=it.next
+      yield a.value
+      a=a.next
     end
   end
 

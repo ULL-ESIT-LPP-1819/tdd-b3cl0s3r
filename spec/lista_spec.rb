@@ -7,11 +7,11 @@ RSpec.describe Nutricional do
     @etiqueta4 = Tag.new("Manzana", 99, 6, 0, 4, 2.4, 0, 1)
     @etiqueta5 = Tag.new("Pera", 143, 13, 0, 2, 2.5, 0, 3)
 
-    @datos1 = Datos.new(180,90,17,"hombre", 105, 130)
-    @datos2 = Datos.new(156, 50, 9, "mujer", 60, 80)
-    @datos3 = Datos.new(179, 112, 57, "hombre", 200, 60)
-    @datos4 = Datos.new(156, 200, 84, "mujer", 110, 100)
-    @datos5 = Datos.new(176, 255, 23, "mujer", 150, 120)
+    @datos1 = Datos.new(180,90,17,"hombre", 105, 130, 'a')
+    @datos2 = Datos.new(156, 50, 9, "mujer", 60, 80,'b')
+    @datos3 = Datos.new(179, 112, 57, "hombre", 200, 60,'c')
+    @datos4 = Datos.new(156, 200, 84, "mujer", 110, 100,'d')
+    @datos5 = Datos.new(176, 255, 23, "mujer", 150, 120,'f')
 
     @lista = Lista.new()
   end

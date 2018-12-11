@@ -5,7 +5,7 @@ class Datos
 
 # Constructor de datos
 
-  def initialize(altura, peso, edad, sexo, circin, circad)
+  def initialize(altura, peso, edad, sexo, circin, circad, nivelact)
     @altura, @peso = Float(altura), Float(peso)
     @edad, @sexo = Float(edad), String(sexo)
     @circin, @circad = Float(circin), Float(circad)
