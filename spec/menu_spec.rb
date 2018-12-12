@@ -117,4 +117,18 @@ RSpec.describe Nutricional do
     expect(suma.between?(@person4.gasto_energetico_total*0.90, @person4.gasto_energetico_total*1.10)).to be false
     expect(suma.between?(@person0.gasto_energetico_total*0.90, @person0.gasto_energetico_total*1.10)).to be false
   end
+
+  it "Prueba con Zip" do
+    @lkcal.insert(@tag.calcularkcal.round(1))
+    @lkcal.insert(@tag2.calcularkcal.round(1))
+    @lkcal.insert(@tag3.calcularkcal.round(1))
+    @lkcal.insert(@tag4.calcularkcal.round(1))
+    @lkcal.insert(@tag5.calcularkcal.round(1))
+
+    @menu1.insert(@tag.calcularkcal.round(1))
+    @menu1.insert(@tag7.calcularkcal.round(1))
+    @menu1.insert(@tag3.calcularkcal.round(1))
+    @menu1.insert(@tag5.calcularkcal.round(1))
+    @menu1.insert(@tag9.calcularkcal.round(1))
+  end
 end
