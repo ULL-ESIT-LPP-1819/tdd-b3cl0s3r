@@ -127,8 +127,11 @@ RSpec.describe Nutricional do
 
     @menu1.insert(@tag.calcularkcal.round(1))
     @menu1.insert(@tag7.calcularkcal.round(1))
-    @menu1.insert(@tag3.calcularkcal.round(1))
-    @menu1.insert(@tag5.calcularkcal.round(1))
-    @menu1.insert(@tag9.calcularkcal.round(1))
+    @menu1.insert(@tag8.calcularkcal.round(1))
+    @menu1.insert(@tag6.calcularkcal.round(1))
+    @menu1.insert(@tag2.calcularkcal.round(1))
+
+    expect(@lkcal.zip(@menu1)).to eq([[8.5, 8.5], [653.4, 797.4], [653.4, 293.4], [653.4, 140.4], [473.4, 653.4]])
+    expect(@lkcal.zip(@menu1).class).to eq(Array)
   end
 end
