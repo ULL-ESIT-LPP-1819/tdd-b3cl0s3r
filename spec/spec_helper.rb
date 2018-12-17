@@ -3,7 +3,9 @@ require "nutricional"
 require "lista"
 require "persona"
 require "datos"
+require 'coveralls'
 
+Coveralls.wear!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
