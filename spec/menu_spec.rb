@@ -18,7 +18,22 @@ RSpec.describe Nutricional do
     @tag9 = Tag.new("Papa fritas", 0, 43, 0, 2.1, 2.1, 0, 13)
 
     @lkcal = Lista.new()
+
     @menu1 = Lista.new()
+    @menu2 = Lista.new()
+    @menu3 = Lista.new()
+    @menu4 = Lista.new()
+    @menu5 = Lista.new()
+    @menu6 = Lista.new()
+    @menu7 = Lista.new()
+    @menu8 = Lista.new()
+    @menu9 = Lista.new()
+    @menu10 = Lista.new()
+
+    @vectormenus = []
+
+    @listaindv = Lista.new()
+
   end
 
   it "Funcionan las funciones" do
@@ -134,4 +149,90 @@ RSpec.describe Nutricional do
     expect(@lkcal.zip(@menu1)).to eq([[8.5, 8.5], [653.4, 797.4], [653.4, 293.4], [653.4, 140.4], [473.4, 653.4]])
     expect(@lkcal.zip(@menu1).class).to eq(Array)
   end
+
+  it "Pruebas Array de Menus" do
+
+    @menu1.insert(@tag)
+    @menu1.insert(@tag2)
+    @menu1.insert(@tag3)
+    @menu1.insert(@tag4)
+    @menu1.insert(@tag5)
+
+    @menu2.insert(@tag5)
+    @menu2.insert(@tag4)
+    @menu2.insert(@tag3)
+    @menu2.insert(@tag2)
+    @menu2.insert(@tag)
+
+    @menu3.insert(@tag3)
+    @menu3.insert(@tag2)
+    @menu3.insert(@tag)
+    @menu3.insert(@tag2)
+    @menu3.insert(@tag3)
+
+    @menu4.insert(@tag5)
+    @menu4.insert(@tag4)
+    @menu4.insert(@tag2)
+    @menu4.insert(@tag4)
+    @menu4.insert(@tag5)
+
+    @menu5.insert(@tag9)
+    @menu5.insert(@tag8)
+    @menu5.insert(@tag7)
+    @menu5.insert(@tag6)
+    @menu5.insert(@tag5)
+
+    @menu6.insert(@tag6)
+    @menu6.insert(@tag4)
+    @menu6.insert(@tag5)
+    @menu6.insert(@tag6)
+    @menu6.insert(@tag4)
+
+    @menu7.insert(@tag3)
+    @menu7.insert(@tag3)
+    @menu7.insert(@tag9)
+    @menu7.insert(@tag6)
+    @menu7.insert(@tag6)
+
+    @menu8.insert(@tag4)
+    @menu8.insert(@tag9)
+    @menu8.insert(@tag3)
+    @menu8.insert(@tag2)
+    @menu8.insert(@tag2)
+
+    @menu9.insert(@tag4)
+    @menu9.insert(@tag5)
+    @menu9.insert(@tag6)
+    @menu9.insert(@tag4)
+    @menu9.insert(@tag3)
+
+    @menu10.insert(@tag9)
+    @menu10.insert(@tag8)
+    @menu10.insert(@tag9)
+    @menu10.insert(@tag6)
+    @menu10.insert(@tag8)
+
+    @vectormenus.push(@menu1)
+    @vectormenus.push(@menu2)
+    @vectormenus.push(@menu3)
+    @vectormenus.push(@menu4)
+    @vectormenus.push(@menu5)
+    @vectormenus.push(@menu6)
+    @vectormenus.push(@menu7)
+    @vectormenus.push(@menu8)
+    @vectormenus.push(@menu9)
+    @vectormenus.push(@menu10)
+
+    @listaindv.insert(@person0)
+    @listaindv.insert(@person1)
+    @listaindv.insert(@person2)
+    @listaindv.insert(@person3)
+    @listaindv.insert(@person4)
+    @listaindv.insert(@person0)
+    @listaindv.insert(@person1)
+    @listaindv.insert(@person2)
+    @listaindv.insert(@person3)
+    @listaindv.insert(@person4)
+  end
+
 end
