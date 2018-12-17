@@ -73,4 +73,8 @@ class Tag
     puts  "Sal: 6 g"
   end
 
+  def +(Another)
+    @self.calcularkcal+Another.calcularkcal
+  end
+  
 end

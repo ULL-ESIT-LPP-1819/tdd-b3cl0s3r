@@ -223,6 +223,9 @@ RSpec.describe Nutricional do
     @vectormenus.push(@menu9)
     @vectormenus.push(@menu10)
 
+  end
+
+  it "Pruebas lista de individuos" do
     @listaindv.insert(@person0)
     @listaindv.insert(@person1)
     @listaindv.insert(@person2)
