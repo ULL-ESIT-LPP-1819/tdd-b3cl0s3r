@@ -4,33 +4,33 @@ class Lista
   attr_accessor :head, :tail
   include Comparable,Enumerable
 
-# Constructor
+  # Constructor
 
   def initialize()
-     @head = nil
-     @tail = nil
+    @head = nil
+    @tail = nil
   end
 
-# Insertar en la lista
+  # Insertar en la lista
 
   def insert(etiqueta)
-     nodo = Node.new(etiqueta, nil, nil)
+    nodo = Node.new(etiqueta, nil, nil)
 
-     if self.empty
-       nodo.next=nodo
-       nodo.prev=nodo
-       @head=nodo
-       @tail=nodo
+    if self.empty
+      nodo.next=nodo
+      nodo.prev=nodo
+      @head=nodo
+      @tail=nodo
 
-     else
-       nodo.prev = @tail
-       nodo.next = nil
-       @tail.next = nodo
-       @tail = nodo
-     end
+    else
+      nodo.prev = @tail
+      nodo.next = nil
+      @tail.next = nodo
+      @tail = nodo
+    end
   end
 
-# Sacar de la lista
+  # Sacar de la lista
 
   def pop
     if @head == nil
@@ -47,7 +47,7 @@ class Lista
 
   end
 
-# Desplazar en la lista
+  # Desplazar en la lista
 
   def shift
     if self.empty
@@ -63,7 +63,7 @@ class Lista
     end
   end
 
-# Imprimir lista
+  # Imprimir lista
 
   def to_s
     node = @head
@@ -75,7 +75,7 @@ class Lista
     return a
   end
 
-# Calcular tamaño lista
+  # Calcular tamaño lista
 
   def tamañolista
     size = 0
@@ -87,13 +87,13 @@ class Lista
     return size
   end
 
-# ¿esta la lista vacia?
+  # ¿esta la lista vacia?
 
   def empty
     @head.nil?
   end
 
-# Clasificar segun sales
+  # Clasificar segun sales
 
   def clasificar_sales
 
@@ -114,7 +114,7 @@ class Lista
     devolver.append(l1, l2)
   end
 
-# Clasificar segun imc
+  # Clasificar segun imc
 
   def clasificar_imc
 
@@ -135,17 +135,75 @@ class Lista
     devolver.append(l1, l2)
   end
 
-# Recorrer each
+  # Recorrer each
 
   def each
-    a = @head
-    while(!a.nil?)
-      yield a.value
-      a=a.next
+    node = @head
+    while !(node.nil?)
+      yield node.value
+      node = node.next
     end
   end
 
-# Clasificar por hidratos
+
+  def sort_for
+
+    @temp = self.map{|x| x.gasto_energetico_total.round(2)}
+    lista_ordenada=[]
+    lista_ordenada.push(@temp[0])
+    for i in (1..length - 1)
+      a=@temp[i]
+      for j in (0..i)
+        if(lista_ordenada[j]>=a)
+          lista_ordenada.insert(j,a)
+          break
+        elsif(lista_ordenada[lista_ordenada.size-1] <= a)
+          lista_ordenada.push(a)
+          break
+        end
+      end
+    end
+    return lista_ordenada
+
+  end
+
+  def sort_each
+
+    @temp  = self.map{ |x| x.gasto_energetico_total.round(2)}
+
+    i=0
+    @temp.each do |x|
+      a=x
+      i1=i
+      j=i1+1
+      @temp[j..@temp.length-1].each do |y|
+        if a > y
+          a = y
+          i1 = j
+        end
+        j+=1
+      end
+      @temp[i1]=x
+      @temp[i]=a
+      i+=1
+    end
+    @temp
+  end
+
+  def length
+    size = 0
+    node = @head
+    while !(node.nil?)
+      size = size + 1
+      node = node.next
+    end
+    size
+  end
+
+
+
+
+  # Clasificar por hidratos
 
   def clasf_hidratos
     lista=[]
@@ -158,7 +216,7 @@ class Lista
     return lista
   end
 
-# Clasificar por peso
+  # Clasificar por peso
 
   def clasf_peso
     lista=[]
@@ -171,8 +229,5 @@ class Lista
     return lista
   end
 
-  def suma_etiquetas
-    
-  end
 
 end

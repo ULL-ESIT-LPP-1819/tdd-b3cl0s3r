@@ -3,6 +3,7 @@ require "nutricional/version"
 class Tag
 
   include Comparable
+  include Enumerable
   attr_accessor :nombre, :venergetico, :cgrasas, :cgsaturadas, :hidratos, :azucares, :proteinas, :sal, :monoinsat, :poliinsat, :polialcol, :almidon, :fibra
 
 # Comparable
@@ -73,8 +74,8 @@ class Tag
     puts  "Sal: 6 g"
   end
 
-  def +(anOther)
-    @self.calcularkcal+anOther.calcularkcal
+  def +(other)
+    calcularkcal + other.calcularkcal
   end
 
 end

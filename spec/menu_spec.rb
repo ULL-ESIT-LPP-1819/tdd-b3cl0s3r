@@ -7,15 +7,15 @@ RSpec.describe Nutricional do
     @person4 = Paciente.new("Eco", Datos.new(156, 200, 84, "mujer", 110, 100, "Actividad intensa"))
     @person0 = Paciente.new("Diego", Datos.new(176, 255, 23, "mujer", 150, 120, "Reposo"))
 
-    @tag = Tag.new("Freeway", 10, 0, 0, 2.1, 2.1, 0, 0.02)
-    @tag2 = Tag.new("Hamburguesa", 500, 63, 0, 2.1, 2.1, 0, 13)
-    @tag3 = Tag.new("Zapato", 500, 63, 0, 2.1, 2.1, 0, 13)
-    @tag4 = Tag.new("Golosina", 500, 63, 0, 2.1, 2.1, 0, 13)
-    @tag5 = Tag.new("Pechuga", 20, 43, 0, 2.1, 2.1, 0, 13)
-    @tag6 = Tag.new("Mesa", 100, 6, 0, 2.1, 2.1, 0, 13)
-    @tag7 = Tag.new("Chicha", 200, 79, 0, 2.1, 2.1, 0, 13)
-    @tag8 = Tag.new("Galletas", 50, 23, 0, 2.1, 2.1, 0, 13)
-    @tag9 = Tag.new("Papa fritas", 0, 43, 0, 2.1, 2.1, 0, 13)
+    @tag = Tag.new("Freeway", 19, 0, 0, 2.1, 2.1, 0, 0.02)
+    @tag2 = Tag.new("Hamburguesa", 556, 63, 0, 2.1, 2.1, 0, 13)
+    @tag3 = Tag.new("Zapato", 130, 63, 0, 2.1, 2.1, 0, 13)
+    @tag4 = Tag.new("Golosina", 300, 63, 0, 2.1, 2.1, 0, 13)
+    @tag5 = Tag.new("Pechuga", 24, 43, 0, 2.1, 2.1, 0, 13)
+    @tag6 = Tag.new("Mesa", 111, 6, 0, 2.1, 2.1, 0, 13)
+    @tag7 = Tag.new("Chicha", 202, 79, 0, 2.1, 2.1, 0, 13)
+    @tag8 = Tag.new("Galletas", 55, 23, 0, 2.1, 2.1, 0, 13)
+    @tag9 = Tag.new("Papa fritas", 223, 43, 0, 2.1, 2.1, 0, 13)
 
     @lkcal = Lista.new()
 
@@ -221,6 +221,10 @@ RSpec.describe Nutricional do
     @vectormenus.push(@menu8)
     @vectormenus.push(@menu9)
     @vectormenus.push(@menu10)
+
+    expect(@vectormenus.sort_each).to eq([1,2,3])
+    expect(@vectormenus.sort_for).to eq([1,2,3])
+    expect(@vectormenus.map{ |x| x.gasto_energetico_total}.sort ).to eq([1,2,3])
   end
 
   it "Pruebas lista de individuos" do
@@ -234,18 +238,10 @@ RSpec.describe Nutricional do
     @listaindv.insert(@person2)
     @listaindv.insert(@person3)
     @listaindv.insert(@person4)
-  end
 
-  it "ordenar lista de pacientes con for, each y sort " do
-    expect(@vectormenus.sort_each).to eq([a,b,c])
-    expect(@vectormenus.sort_for).to eq([a,b,c])
-    expect(@vectormenus.map{ |x| x.gasto_energetico_total}.sort ).to eq([a,b,c])
-  end
-
-  it "ordenar array de menus con for, each y sort" do
-    expect(@listaindv.sort_each).to eq([a,b,c])
-    expect(@listaindv.sort_for).to eq([a,b,c])
-    expect(@listaindv.map{ |x| x.reduce(:+)}.sort).to eq([a,b,c])
+    expect(@listaindv.sort_each).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
+    expect(@listaindv.sort_for).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
+    expect(@listaindv.map{ |x| x.gasto_energetico_total}.sort).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.0675, 2456.0675, 3894.0, 3894.0, 4198.4, 4198.4])
   end
 
 end

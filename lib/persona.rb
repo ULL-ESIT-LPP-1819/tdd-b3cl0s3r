@@ -3,7 +3,8 @@
 class Persona
   attr_accessor :name
   include Comparable
-
+  include Enumerable
+  
   # Constructor
 
   def initialize(nombre)
