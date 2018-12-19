@@ -2,14 +2,11 @@ class Array
 
 
   def sort_for
-
-    tmp = self.map{|x| x.reduce(:+)}
-    return tmp
-    orden = []
-    orden.push(tmp[0])
+    orden=[]
+    orden.push(self[0])
 
     for i in (1..length - 1)
-      a = tmp[i]
+      a = self[i]
       for j in (0..i)
 
         if (a < orden[j])
@@ -23,13 +20,10 @@ class Array
     end
 
     return orden
-
   end
 
   def sort_each
-
-   return self.map{ |x|}
-
+    @temp = self.dup
     lista_ord = []
     i = 0
     @temp.each do |x|
@@ -37,7 +31,7 @@ class Array
       i1 = i
       j = i1+1
 
-      @temp[j..temp.length-1].each do |y|
+      @temp[j..@temp.length-1].each do |y|
         if (a > y)
           a = y
           i1 = j
@@ -50,8 +44,6 @@ class Array
       i+=1
     end
     @temp
-
   end
-
 
 end

@@ -37,7 +37,7 @@ class Tag
 
 # Calcular Kcal
   def calcularkcal
-    9*@cgrasas+9*@monoinsat+9*@poliinsat+4*@hidratos+2.4*@polialcol+4*@almidon+2*@fibra+4*@proteinas+6*@sal
+    (9*@cgrasas+9*@monoinsat+9*@poliinsat+4*@hidratos+2.4*@polialcol+4*@almidon+2*@fibra+4*@proteinas+6*@sal).round(3)
   end
 
 # Calcular Ir
