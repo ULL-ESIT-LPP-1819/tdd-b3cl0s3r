@@ -1,10 +1,8 @@
 class Array
 
-
   def sort_for
     orden=[]
     orden.push(self[0])
-
     for i in (1..length - 1)
       a = self[i]
       for j in (0..i)
@@ -18,7 +16,6 @@ class Array
         end
       end
     end
-
     return orden
   end
 
@@ -30,7 +27,6 @@ class Array
       a = x
       i1 = i
       j = i1+1
-
       @temp[j..@temp.length-1].each do |y|
         if (a > y)
           a = y
@@ -38,7 +34,6 @@ class Array
         end
         j+=1
       end
-
       @temp[i1] = x
       @temp[i]=a
       i+=1

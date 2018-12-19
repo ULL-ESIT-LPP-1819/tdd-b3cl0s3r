@@ -229,14 +229,4 @@ class Lista
     return lista
   end
 
-  def clasf_et
-    lista=[]
-    current_node=@head
-
-    while(!current_node.nil?)
-      lista.append(current_node.calcularkcal)
-      current_node=current_node.next
-    end
-    return lista
-  end
 end
