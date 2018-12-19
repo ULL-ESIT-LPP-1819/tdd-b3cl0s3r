@@ -170,4 +170,9 @@ class Lista
     end
     return lista
   end
+
+  def suma_etiquetas
+    
+  end
+
 end

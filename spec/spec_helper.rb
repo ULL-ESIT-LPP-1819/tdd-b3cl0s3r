@@ -3,7 +3,9 @@ require "nutricional"
 require "lista"
 require "persona"
 require "datos"
+require "array"
 require 'coveralls'
+
 
 Coveralls.wear!
 

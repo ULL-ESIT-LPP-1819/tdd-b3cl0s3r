@@ -31,7 +31,6 @@ RSpec.describe Nutricional do
     @menu10 = Lista.new()
 
     @vectormenus = []
-
     @listaindv = Lista.new()
 
   end
@@ -222,7 +221,6 @@ RSpec.describe Nutricional do
     @vectormenus.push(@menu8)
     @vectormenus.push(@menu9)
     @vectormenus.push(@menu10)
-
   end
 
   it "Pruebas lista de individuos" do
@@ -236,6 +234,18 @@ RSpec.describe Nutricional do
     @listaindv.insert(@person2)
     @listaindv.insert(@person3)
     @listaindv.insert(@person4)
+  end
+
+  it "ordenar lista de pacientes con for, each y sort " do
+    expect(@vectormenus.sort_each).to eq([a,b,c])
+    expect(@vectormenus.sort_for).to eq([a,b,c])
+    expect(@vectormenus.map{ |x| x.gasto_energetico_total}.sort ).to eq([a,b,c])
+  end
+
+  it "ordenar array de menus con for, each y sort" do
+    expect(@listaindv.sort_each).to eq([a,b,c])
+    expect(@listaindv.sort_for).to eq([a,b,c])
+    expect(@listaindv.map{ |x| x.reduce(:+)}.sort).to eq([a,b,c])
   end
 
 end

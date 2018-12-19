@@ -82,5 +82,4 @@ class Paciente < Persona
   def gasto_energetico_total
     self.gasto_energetico_basal+self.efecto_termogeno+self.gasto_actividad_fisica
   end
-
 end
