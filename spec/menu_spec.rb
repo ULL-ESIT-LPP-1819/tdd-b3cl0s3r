@@ -1,3 +1,5 @@
+
+
 RSpec.describe Nutricional do
 
   before :each do
@@ -205,9 +207,15 @@ RSpec.describe Nutricional do
     @vectormenus.push(@menu9.reduce(0){ |sum, x| sum+x.calcularkcal})
     @vectormenus.push(@menu10.reduce(0){ |sum, x| sum+x.calcularkcal})
 
-    expect(@vectormenus.sort_each).to eq( [766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
-    expect(@vectormenus.sort_for).to eq([766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
-    expect(@vectormenus.sort).to eq([766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
+    puts Benchmark.measure {
+      expect(@vectormenus.sort_each).to eq( [766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
+    }
+    puts Benchmark.measure {
+      expect(@vectormenus.sort_for).to eq([766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
+    }
+    puts Benchmark.measure {
+      expect(@vectormenus.sort).to eq([766.8, 1126.8, 1143.84, 1306.8, 1306.8, 1306.8, 1315.32, 1760.4, 2073.6, 2397.6])
+    }
   end
 
   it "Pruebas lista de individuos" do
@@ -221,10 +229,15 @@ RSpec.describe Nutricional do
     @listaindv.insert(@person2)
     @listaindv.insert(@person3)
     @listaindv.insert(@person4)
-
-    expect(@listaindv.sort_each).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
-    expect(@listaindv.sort_for).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
-    expect(@listaindv.map{ |x| x.gasto_energetico_total}.sort).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.0675, 2456.0675, 3894.0, 3894.0, 4198.4, 4198.4])
+    puts Benchmark.measure {
+      expect(@listaindv.sort_each).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
+    }
+    puts Benchmark.measure {
+      expect(@listaindv.sort_for).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.07, 2456.07, 3894.0, 3894.0, 4198.4, 4198.4])
+    }
+    puts Benchmark.measure {
+      expect(@listaindv.map{ |x| x.gasto_energetico_total}.sort).to eq([1750.7, 1750.7, 1956.9, 1956.9, 2456.0675, 2456.0675, 3894.0, 3894.0, 4198.4, 4198.4])
+    }
   end
 
 end

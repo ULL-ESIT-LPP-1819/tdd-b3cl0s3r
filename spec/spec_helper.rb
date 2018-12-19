@@ -5,7 +5,7 @@ require "persona"
 require "datos"
 require "array"
 require 'coveralls'
-
+require 'benchmark'
 
 Coveralls.wear!
 
