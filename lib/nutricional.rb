@@ -32,7 +32,7 @@ class Tag
 
 # Calcular kj
   def calcularkj
-    37*@cgrasas+37*@monoinsat+37*@poliinsat+17*@hidratos+10*@polialcol+17*@almidon+8*@fibra+17*@proteinas+25*@sal
+    (37*@cgrasas+37*@monoinsat+37*@poliinsat+17*@hidratos+10*@polialcol+17*@almidon+8*@fibra+17*@proteinas+25*@sal).round(3)
   end
 
 # Calcular Kcal
@@ -44,7 +44,7 @@ class Tag
 
   def calcularir(valor)
     suma = @venergetico+@cgrasas+@cgsaturadas+@hidratos+@azucares+@proteinas+@sal+@monoinsat+@poliinsat+@polialcol+@almidon+@fibra
-    (valor*100)/suma.round(0)
+    ((valor*100)/suma.round(0)).round(2)
   end
 
 # Imprimir
@@ -52,7 +52,7 @@ class Tag
     a="\nNombre etiqueta: #{@nombre}\t\t\t IR\n"
     a+="Valor energético: #{self.calcularkj} kj / #{self.calcularkcal} kcal\n"
     a+="Grasas de las cuales: #{@cgrasas} g\t\t\t #{self.calcularir(@cgrasas)}%\n"
-    a+="Saturadas: #{@cgsaturadas} g\t\t\t\t\t #{self.calcularir(@cgsaturadas)}%\n"
+    a+="Saturadas: #{@cgsaturadas} g\t\t\t\t #{self.calcularir(@cgsaturadas)}%\n"
     a+="Monoinsaturadas: #{@monoinsat} g\t\t\t\t #{self.calcularir(@monoinsat)}%\n"
     a+="Poliinsaturadas: #{@poliinsat} g\t\t\t\t #{self.calcularir(@poliinsat)}%\n"
     a+="Hidratos de carbono, de los cuales: #{@hidratos} g\t #{self.calcularir(@hidratos)}%\n"
@@ -60,7 +60,7 @@ class Tag
     a+="Polialcoles: #{@polialcol} g\t\t\t\t #{self.calcularir(@polialcol)}%\n"
     a+="Almidon: #{@almidon} g\t\t\t\t\t #{self.calcularir(@almidon)}%\n"
     a+="Fibra: #{@fibra} g\t\t\t\t\t #{self.calcularir(@fibra)}%\n"
-    a+="Proteinas: #{@proteinas} g\t\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
+    a+="Proteinas: #{@proteinas} g\t\t\t\t #{self.calcularir(@proteinas)}%\n\n"
   end
 
 #  ir de referencia

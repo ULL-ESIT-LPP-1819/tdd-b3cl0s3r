@@ -4,6 +4,7 @@ require "lista"
 require "persona"
 require "datos"
 require "array"
+require "menu"
 require 'coveralls'
 require 'benchmark'
 
